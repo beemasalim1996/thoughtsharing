@@ -158,6 +158,8 @@ def signup(request):
 
 
 def thoughts_view(request):
+    u = models.CustUser.objects.get(id=request.user.id)
+    print(u, "user")
     thoughts = models.Thoughts.objects.order_by('-id')
     print(thoughts,"ttttttttttttttt")
     if request.method == 'POST' and 'like_id' in request.POST:
@@ -171,10 +173,12 @@ def thoughts_view(request):
             user_details.ThoughtImportant = True
             user_details.save()
 
-    return render(request, 'thoughts_view.html', {'thoughts':thoughts})
+    return render(request, 'thoughts_view.html', {'thoughts':thoughts,'u':u})
 
 def thoughts_add(request):
     error_message=None
+    u = models.CustUser.objects.get(id=request.user.id)
+    print(u, "user")
     if request.method == 'POST' and "submit" in request.POST :
 
         Thought=request.POST.get("Thought")
@@ -201,6 +205,6 @@ def thoughts_add(request):
         else:
             return render(request, 'thought_add.html', {'error_message': error_message})
         return redirect("thoughts_view")
-    return render(request,"thought_add.html")
+    return render(request,"thought_add.html",{'u':u})
 
 
