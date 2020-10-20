@@ -1,0 +1,69 @@
+{% extends 'dashboard_view.html' %}
+
+{% block content %}
+
+<section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"> Data Table</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="tile">
+                        <div class="tile-body">
+
+<a style="color: white"; href="{% url 'thoughts_add' %}"><button class="btn btn-success" type="submit" style="float:right; ">
+    <i class="fa fa-fw fa-lg fa-plus"></i>Add New</button></a></div>
+     <br>
+            <!-- /.box-header -->
+            <div class="box-body">
+
+              <table id="example2" class="table table-bordered table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Thoughts</th>
+<th>Like</th>
+<!--        <th>Edit</th>-->
+<!--        <th>Delete</th>-->
+    </tr>
+    {% for i in thoughts %}
+        <tr>
+            <td>{{ forloop.counter}}</td>
+            <td><input name="Thought" type="textarea" rows="100" cols="450" value="{{ i.Thought }}"/></td>
+<!--<td>-->
+<!--<form method="POST" id="form">{%csrf_token%}-->
+<!--                                                        <input id="selectAll" type="checkbox" value="{{i.id}}" name="thought_important{{i.id}}" onclick='assignmentFinish(this,"{{i.id}}")'{% if i.ThoughtImportant %}checked{% endif %}><span class="label-text">Like</span>-->
+<!--                                                    </form> </td>-->
+            <td>
+                <form method="POST" >{% csrf_token %}
+                    <input type="number" name="like_id" value="{{ i.id }}" hidden>
+                    <button type="submit" {% if i.ThoughtImportant == True %}class="btn btn-danger btn-sm" {% else %} class="btn btn-success btn-sm"  {% endif %} >
+                                                  {% if i.ThoughtImportant == True %}
+                                                    Unlike
+                                                  {% else %}
+                                                    Like
+                                                  {% endif %}
+                                              </button>
+                </form>
+            <td>
+<!--                 <form method="POST">{% csrf_token %}-->
+<!--                     <input type="number" name="delete_id" value="{{ i.id }}" hidden>-->
+<!--                     <button type="submit" name="delete">Delete</button>-->
+<!--                 </form>-->
+<!--            </td>-->
+        </tr>
+    {% endfor %}
+
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+          </div>
+        </div>
+      </div>
+
+</section>
+{% endblock %}
