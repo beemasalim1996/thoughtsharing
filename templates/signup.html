@@ -22,7 +22,7 @@
         <h1>Thought Sharing Application</h1>
       </div>
 
-      <div class="register-box" >
+      <div class="login-box" style="width:500px;height:500px">
       <p class="text-danger"></p>
         <form method="POST" enctype="multipart/form-data" class="login-form">{% csrf_token %}
           <h3 class="login-head text-center"><i class="fa fa-lg fa-fw fa-user"></i>SIGN UP</h3>
@@ -53,7 +53,7 @@
 
         </form>
         <div class="form-group btn-container mt-1">
-            <a style="text-decoration: none;" href="{% url 'login_view' %}"><p name="back_to_login" class="btn btn-danger btn-block"><i class="fa fa-arrow-left fa-lg fa-fw"></i>BACK TO LOGIN</p></a>
+            <a style="text-decoration: none;" href="{% url 'login_view' %}"><i class="fa fa-arrow-left fa-lg fa-fw"></i>BACK TO LOGIN</p></a>
           </div>
       </div>
 
@@ -65,7 +65,7 @@
     <script type="text/javascript">
       // Login Page Flipbox control
       $('.login-content [data-toggle="flip"]').click(function() {
-      	$('.login-box').toggleClass('flipped');
+      	$('.register-box').toggleClass('flipped');
       	return false;
       });
     </script>
