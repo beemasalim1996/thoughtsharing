@@ -1,24 +1,10 @@
-from django.shortcuts import render
-from . import models
-# Create your views here.
 
-from django.http.response import JsonResponse
+from . import models
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from django.contrib.auth import authenticate, login, logout
-from django.contrib import messages
-from django.contrib.auth.models import Group, Permission
-from django.contrib.contenttypes.models import ContentType
-import random
-import string
-import datetime
-import calendar
-from datetime import datetime as dte
-from django.core.paginator import Paginator
-from django.contrib.auth.decorators import permission_required, login_required
-import traceback
 
 
 # Create your views here.
@@ -73,7 +59,6 @@ def login_view(request):
             try:
 
                 ins = models.CustUser.objects.get(username=user)
-                # request.session['academic_id'] = ins.active_academicId_id
                 request.session['user_id'] = ins.id
                 print(request.session['user_id'], "session")
 
@@ -83,7 +68,7 @@ def login_view(request):
             except Exception as e:
                 print(e)
 
-                return HttpResponse(str(e))
+
             return redirect("dashboard_view")
 
         else:
@@ -144,7 +129,6 @@ def signup(request):
             user = models.CustUser.objects.create_superuser(username=user_name, password=password, email=email,
                                                                     logo=image)
 
-                    # create account group
 
             main = "User Successfully Registered"
             para = "Please Wait! We will be taking you back to Login Page "
