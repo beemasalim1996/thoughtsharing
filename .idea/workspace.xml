@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5a93d399-068c-4edb-be5b-3e065006e44b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thoughts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Thoughts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thoughts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Thoughts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thoughts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Thoughts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/event_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/event_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event_view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard_view.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +29,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/dashboard_view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="343" column="37" selection-start-line="343" selection-start-column="37" selection-end-line="343" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/event_view.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -51,7 +56,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/event_add.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
@@ -74,18 +79,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ShareThought/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-              <folding>
-                <element signature="e#636#668#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Thoughts/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
@@ -101,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/Thoughts/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -125,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/ShareThought/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-354">
-              <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -188,7 +181,6 @@
         <option value="$PROJECT_DIR$/templates/thought_add.html" />
         <option value="$PROJECT_DIR$/templates/thoughts_view.html" />
         <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/templates/dashboard_view.html" />
         <option value="$PROJECT_DIR$/Events/apps.py" />
         <option value="$PROJECT_DIR$/Events/models.py" />
         <option value="$PROJECT_DIR$/Events/migrations/0001_initial.py" />
@@ -203,6 +195,7 @@
         <option value="$PROJECT_DIR$/templates/event_view.html" />
         <option value="$PROJECT_DIR$/Thoughts/views.py" />
         <option value="$PROJECT_DIR$/templates/event_add.html" />
+        <option value="$PROJECT_DIR$/templates/dashboard_view.html" />
       </list>
     </option>
   </component>
@@ -474,13 +467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard_view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="343" column="36" selection-start-line="343" selection-start-column="36" selection-end-line="343" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -508,7 +494,7 @@
     <entry file="file://$PROJECT_DIR$/ShareThought/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-354">
-          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -525,7 +511,7 @@
     <entry file="file://$PROJECT_DIR$/Thoughts/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -581,6 +567,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="343" column="37" selection-start-line="343" selection-start-column="37" selection-end-line="343" selection-end-column="37" />
         </state>
       </provider>
     </entry>
