@@ -149,6 +149,7 @@ def signup(request):
 def events_view(request):
     event_page=''
     count=''
+    events=''
     try:
         data = models.Thoughts.objects.all().order_by('id')
         print(data,"data")
@@ -161,6 +162,16 @@ def events_view(request):
         events = models.Thoughts.objects.order_by('endDate')
         print(events, "ttttttttttttttt")
 
+        if request.method == 'POST' and 'published_id' in request.POST:
+            published_id = request.POST.get('published_id')
+            print(published_id,"published_id")
+            user_details = models.Thoughts.objects.get(id=published_id)
+            if user_details.published:
+                user_details.published = False
+                user_details.save()
+            else:
+                user_details.published = True
+                user_details.save()
 
         if request.method == 'POST' and 'paid_id' in request.POST:
             paid_id = request.POST['paid_id']
@@ -172,11 +183,23 @@ def events_view(request):
             else:
                 user_details.paid = True
                 user_details.save()
+
+
+        if request.method == 'POST' and 'like_id' in request.POST:
+            like_id = request.POST['like_id']
+            print(like_id,"like_id")
+            user_details = models.Thoughts.objects.get(id=like_id)
+            if user_details.like:
+                user_details.like = False
+                user_details.save()
+            else:
+                user_details.like = True
+                user_details.save()
     except Exception as e:
         print(e)
 
 
-    return render(request, 'event_view.html',{'key': event_page,'count':count})
+    return render(request, 'event_view.html',{'key': event_page,'count':count,'events':events})
 
 def events_add(request):
     error_message=None
@@ -185,16 +208,17 @@ def events_add(request):
     if request.method == 'POST' and 'submit' in request.POST:
         title=request.POST.get("event_title")
         print(title,"hhhhhhhhhhhhhh")
-        startdate = request.POST['event_start_date']
+        startdate = request.POST.get('event_start_date')
+        print(startdate,"startdate")
         endDate = request.POST.get('event_end_date')
         location = request.POST.get("event_location")
 
         category = request.POST.get("category")
         description = request.POST.get("event_description")
-        published = request.POST.get("event_published")
-        paid = request.POST.get("event_paid")
-        image = request.FILES.get("image")
-        print(title,startdate,endDate,location, "title")
+        # published = request.POST.get("event_published")
+        # paid = request.POST.get("event_paid")
+        image = request.FILES["image"]
+        print(title,startdate,endDate,location,image, "title")
         obj = models.Thoughts()
 
         obj.title = title
@@ -205,11 +229,11 @@ def events_add(request):
         obj.location = location
         obj.description = description
         obj.category = category
-        obj.published = published
-        obj.paid = paid
+        # obj.published = published
+        # obj.paid = paid
         obj.image = image
         obj.userId = models.CustUser.objects.get(id=request.user.id)
-        print(obj.userId,"uuuuuuuuuu")
+        print(obj.userId,obj.image,"uuuuuuuuuu")
         obj.save()
         print("save")
         # if error_message is None:

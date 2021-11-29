@@ -15,13 +15,14 @@ class Thoughts(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=255,null=True, blank=True)
     location = models.CharField(max_length=255)
-    startdate = models.DateField()
-    endDate = models.DateField()
+    startdate = models.DateTimeField()
+    endDate = models.DateTimeField()
     image = models.ImageField(
         upload_to='image/', blank=True, null=True)
     category = models.CharField(max_length=255)
     published = models.BooleanField(default=False)
     paid = models.BooleanField(default=False)
+    like = models.BooleanField(default=False)
     userId = models.ForeignKey(
         CustUser, on_delete=models.CASCADE, blank=True, null=True)
 

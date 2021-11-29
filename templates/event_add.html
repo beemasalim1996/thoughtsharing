@@ -10,7 +10,7 @@
      <div class="box-header with-border">
      {% if error_message %} <span style="color: red">{{error_message}}</span>{%endif%}
      </div>
-            <form method="POST">{% csrf_token %}
+            <form method="POST" enctype="multipart/form-data" >{% csrf_token %}
                                     <div class="box-body" >
 
                                         <div class="form-group">
@@ -82,29 +82,29 @@
 
                                         </div>
 
-                                        <div class="form-group">
+<!--                                        <div class="form-group">-->
 
-<!--                                            <div class="col-sm-3">-->
-                                                <div class="animated-checkbox">
-                                                    <label>
-                                                        <input type="checkbox" value="True" name="event_published"><span class="label-text">Published</span>
-                                                    </label>
-                                                </div>
-<!--                                                <input type="file" class="form-control" id="inputText3" placeholder="fine amount" required>-->
+<!--&lt;!&ndash;                                            <div class="col-sm-3">&ndash;&gt;-->
+<!--                                                <div class="animated-checkbox">-->
+<!--                                                    <label>-->
+<!--                                                        <input type="checkbox" value="True" name="event_published"><span class="label-text">Published</span>-->
+<!--                                                    </label>-->
+<!--                                                </div>-->
+<!--&lt;!&ndash;                                                <input type="file" class="form-control" id="inputText3" placeholder="fine amount" required>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </div>&ndash;&gt;-->
+<!--                                        </div>-->
+
+<!--                                        <div class="form-group">-->
+
+<!--&lt;!&ndash;                                            <div class="col-sm-3">&ndash;&gt;-->
+<!--                                                <div class="animated-checkbox">-->
+<!--                                                    <label>-->
+<!--                                                        <input type="checkbox" value="True" name="event_paid"><span class="label-text">Paid</span>-->
+<!--                                                    </label>-->
+<!--                                                </div>-->
+<!--&lt;!&ndash;                                                <input type="file" class="form-control" id="inputText3" placeholder="fine amount" required>&ndash;&gt;-->
 <!--                                            </div>-->
-                                        </div>
-
-                                        <div class="form-group">
-
-<!--                                            <div class="col-sm-3">-->
-                                                <div class="animated-checkbox">
-                                                    <label>
-                                                        <input type="checkbox" value="True" name="event_paid"><span class="label-text">Paid</span>
-                                                    </label>
-                                                </div>
-<!--                                                <input type="file" class="form-control" id="inputText3" placeholder="fine amount" required>-->
-<!--                                            </div>-->
-                                        </div>
+<!--                                        </div>-->
 
 
 
@@ -113,7 +113,7 @@
                                             <div class="file-upload" >
 
                                               <img src="" alt=""></div>
-                                              <div class="controls"><input type="file" name="image"/></div>
+                                              <div class="controls"><input type="file" name="image"></div>
                                             </div>
 
 

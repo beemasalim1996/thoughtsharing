@@ -16,18 +16,7 @@
 
                             <div class="box box-info">
                                 <div class="box-header with-border"> </div>
-                                <!-- /.box-header -->
-                                <!-- form start -->
-<!--                                <div class="col-sm-12">-->
-<!--                                    <div class="col-lg-3 no-padding">-->
-<!--                                        <div class="input-group">-->
-<!--                                            <input type="text" class="form-control" placeholder="Search for...">-->
-<!--                                        </div>-->
-<!--                                        &lt;!&ndash; /input-group &ndash;&gt;-->
-<!--                                    </div>-->
-<!--                                    &lt;!&ndash; /.col-lg-6 &ndash;&gt;-->
 
-<!--                                </div>-->
                                 <div class="tile-body" style="margin-bottom: 3em">
               <form method="GET">
                 {%csrf_token%}
@@ -54,7 +43,7 @@
             <!-- /.box-header -->
             <div class="box-body">
 
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="example2" class="table table-bordered table-hover"><thead></thead>
     <tr>
         <th>#</th>
                                                 <th>Title</th>
@@ -69,56 +58,62 @@
                                                 <th>Like</th>
 
 
-    </tr>
+    </tr></thead><tbody>
     {% for i in events %}
 
-            <td>{{ forloop.counter}}</td>
 
-                                        </thead>
-                                        <tbody>
-                                        {% for i in posts.object_list %}
+
+
+
+
                                             <tr>
                                                 <th scope="row">{{ forloop.counter }}</th>
                                                 <td>{{ i.title }}</td>
-                                                <td>{{ i.description }}</td>
-                                                <td>{{ i.location }}</td>
+
+
                                                 <td>{{ i.startdate }}</td>
                                                 <td>{{ i.endDate }}</td>
-                                                <td>{{ i.image }}</td>
+                                                <td>{{ i.location }}</td>
+                                                 <td>{{ i.description }}</td>
+                                        <td><img  src=" {% if i.image %}{{ i.image.url }} {% endif %}"   width="200px" class="img-circle" alt="User Image"></td>
                                                 <td>{{ i.category }}</td>
-                                                <td>{{ i.endDate }}</td>
 
 
-<td>  <input type="number" name="published_id" value="{{ i.id }}" hidden>-->
-                    <button type="submit" {% if i.published == True %}class="btn btn-danger btn-sm" {% else %} class="btn btn-success btn-sm"  {% endif %} >
+
+                <td>  <form method="POST">{% csrf_token %} <input type="number" name="published_id" value="{{ i.id }}" hidden>
+                    <button type="submit" name="published_id" value="{{ i.id }}" {% if i.published == True %} class="btn btn-danger btn-sm" {% else %} class="btn btn-success btn-sm"  {% endif %} >
                                                   {% if i.published == True %}
-                                                    Unlike
+                                                    Not Published
                                                   {% else %}
-                                                    Like
+                                                    Published
                                                   {% endif %}
-                                              </button>
-</td>
-                                               <td>  <input type="number" name="paid_id" value="{{ i.id }}" hidden>-->
-                    <button type="submit" {% if i.paid == True %}class="btn btn-danger btn-sm" {% else %} class="btn btn-success btn-sm"  {% endif %} >
+                    </button></form>
+                </td>
+                                                <td>  <form method="POST">{% csrf_token %} <input type="number" name="paid_id" value="{{ i.id }}" hidden>
+                    <button type="submit" name="paid_id" value="{{ i.id }}" {% if i.paid == True %}class="btn btn-danger btn-sm" {% else %} class="btn btn-success btn-sm"  {% endif %} >
                                                   {% if i.paid == True %}
+                                                    Not Paid
+                                                  {% else %}
+                                                    Paid
+                                                  {% endif %}
+                                              </button>
+                                                </form></td>
+                                           <td>  <form method="POST">{% csrf_token %} <input type="number" name="like_id" value="{{ i.id }}" hidden>
+                    <button type="submit" name="like_id" value="{{ i.id }}" {% if i.like == True %}class="btn btn-danger btn-sm" {% else %} class="btn btn-success btn-sm"  {% endif %} >
+                                                  {% if i.like == True %}
                                                     Unlike
                                                   {% else %}
                                                     Like
                                                   {% endif %}
                                               </button>
-</td>
-<!--                                                    <p class="edit">Edit</p>-->
+                                           </form></td>
 
-<!--                                                    <form method="POST">{% csrf_token %}-->
-<!--                                                        <input type="number" value="{{ i.id }}" name="delete_id" hidden>-->
-<!--                                                    <p class="delete">Delete</p>-->
-<!--                                                        <button id="del_btn" type="submit" hidden></button>-->
-<!--                                                        </form>-->
-<!--                                                </td>-->
-<!--                                            </tr>-->
-<!--                                        {% endfor %}-->
-<!--                                        </tbody>-->
+                                            </tr>
+
+                  {% endfor %}
+                  </tbody>
                                     </table>
+
                               <div><label>Total Records :</label>{{ count }}</div>
             {% if key %}
             <nav aria-label="Page navigation example">
@@ -160,52 +155,22 @@
             </nav>
             {% endif %}
           </div>
+
+
+
+
+
+
+
+            </div>
+          </div>
         </div>
-
-                            </div>
-                            <!-- /.box -->
-                            <!-- general form elements disabled -->
-                            <!-- /.box -->
-                        </div>
-
-<!--                </section>-->
-<!--                &lt;!&ndash; /.content &ndash;&gt;-->
-
-
-
-<!--            </div>-->
-<!--        </div>-->
-
-
-
-<!--    </main>-->
-
-
-
-<!--{% block script %}-->
-
-<!--{% endblock %}-->
-
-
-                </form>
-<!--            <td>-->
-
-<!--        </tr>-->
-<!--    {% endfor %}-->
-
-<!--</table>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--</section>-->
-                            </div>
-                    </div>
-                    </section>
+      </div>
+          </div>
+        </div>
+      </div>
+      </div>
+</section>
 
 
 {% endblock %}
