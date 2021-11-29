@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a93d399-068c-4edb-be5b-3e065006e44b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/media/image/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thoughts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Thoughts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thoughts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Thoughts/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thoughts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thoughts/migrations/0002_thoughts_thoughtimportant.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Thoughts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Thoughts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Thoughts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Thoughts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Thoughts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Thoughts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo/Eye_in_the_Sky_wide_by_relhom_-_Copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo/Eye_in_the_Sky_wide_by_relhom_-_Copy_0m7kjLT.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo/colored_pencils_2-wallpaper-2880x1620_-_Copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo/colorful_windows_7_hd-1920x1080_-_Copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo/complete_yellow_flowers-1920x1080_-_Copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo/headphones-wallpaper-2560x1440_-_Copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard_view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/thought_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/thoughts_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event_view.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +20,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Thoughts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2778">
-              <caret line="179" column="66" lean-forward="true" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
+            <state relative-caret-position="1446">
+              <caret line="222" column="77" selection-start-line="222" selection-start-column="77" selection-end-line="222" selection-end-column="77" />
               <folding>
                 <element signature="e#1#21#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/event_add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="78" column="67" selection-start-line="78" selection-start-column="67" selection-end-line="78" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -80,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Thoughts/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="78">
+              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
               <folding>
                 <element signature="e#1#29#0" expanded="true" />
               </folding>
@@ -111,23 +102,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/signup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-397">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="n#style#0;n#label#0;n#form#0;n#div#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#5;n#form#0;n#div#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Thoughts/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            <state relative-caret-position="216">
+              <caret line="12" column="61" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="61" />
               <folding>
                 <element signature="e#1#29#0" expanded="true" />
               </folding>
@@ -209,12 +187,12 @@
         <option value="$PROJECT_DIR$/ShareThought/urls.py" />
         <option value="$PROJECT_DIR$/templates/category_add.html" />
         <option value="$PROJECT_DIR$/templates/event_view.html" />
-        <option value="$PROJECT_DIR$/templates/event_add.html" />
         <option value="$PROJECT_DIR$/Thoughts/admin.py" />
         <option value="$PROJECT_DIR$/ShareThought/settings.py" />
         <option value="$PROJECT_DIR$/Thoughts/urls.py" />
         <option value="$PROJECT_DIR$/templates/signup.html" />
         <option value="$PROJECT_DIR$/Thoughts/models.py" />
+        <option value="$PROJECT_DIR$/templates/event_add.html" />
         <option value="$PROJECT_DIR$/Thoughts/views.py" />
       </list>
     </option>
@@ -484,13 +462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/event_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="78" column="67" selection-start-line="78" selection-start-column="67" selection-end-line="78" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Thoughts/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -560,16 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Thoughts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="e#1#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ShareThought/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-354">
@@ -577,10 +538,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Thoughts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="61" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="61" />
+          <folding>
+            <element signature="e#1#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/event_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="78" column="67" selection-start-line="78" selection-start-column="67" selection-end-line="78" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Thoughts/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="78">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
           <folding>
             <element signature="e#1#29#0" expanded="true" />
           </folding>
@@ -589,8 +567,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Thoughts/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2778">
-          <caret line="179" column="66" lean-forward="true" selection-start-line="179" selection-start-column="66" selection-end-line="179" selection-end-column="66" />
+        <state relative-caret-position="1446">
+          <caret line="222" column="77" selection-start-line="222" selection-start-column="77" selection-end-line="222" selection-end-column="77" />
           <folding>
             <element signature="e#1#21#0" expanded="true" />
           </folding>

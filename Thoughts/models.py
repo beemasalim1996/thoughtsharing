@@ -12,7 +12,7 @@ class CustUser(AbstractUser):
         upload_to='logo/', blank=True, null=True)
 
 class Thoughts(models.Model):
-    titles = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
     description = models.CharField(max_length=255,null=True, blank=True)
     location = models.CharField(max_length=255)
     startdate = models.DateField()

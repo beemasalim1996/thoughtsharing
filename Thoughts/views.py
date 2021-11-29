@@ -147,9 +147,11 @@ def signup(request):
 
 
 def events_view(request):
+    event_page=''
+    count=''
     try:
         data = models.Thoughts.objects.all().order_by('id')
-
+        print(data,"data")
         paginator = Paginator(data, 10)
         page = request.GET.get('page')
         event_page = paginator.get_page(page)
@@ -195,7 +197,7 @@ def events_add(request):
         print(title,startdate,endDate,location, "title")
         obj = models.Thoughts()
 
-        obj.titles = title
+        obj.title = title
 
         obj.startdate = startdate
 
@@ -209,22 +211,22 @@ def events_add(request):
         obj.userId = models.CustUser.objects.get(id=request.user.id)
         print(obj.userId,"uuuuuuuuuu")
         obj.save()
-
-        if error_message is None:
-            try:
-                u=models.CustUser.objects.get(id=request.user.id)
-                obj = models.Thought()
-                Thought = request.POST.get("event_title")
-                obj.titles=Thought
-                obj.userId = u
-                print(obj.userId,"userid")
-
-                obj.save()
-            except Exception as e:
-                print(e)
-        else:
-            return render(request, 'event_add.html', {'error_message': error_message})
-        return redirect("event_view")
+        print("save")
+        # if error_message is None:
+        #     try:
+        #         u=models.CustUser.objects.get(id=request.user.id)
+        #         obj = models.Thoughts()
+        #         Thought = request.POST.get("event_title")
+        #         obj.title=Thought
+        #         obj.userId = u
+        #         print(obj.userId,"userid")
+        # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        #         obj.save()
+        #     except Exception as e:
+        #         print(e)
+        # else:
+        #     return render(request, 'event_add.html', {'error_message': error_message})
+        return redirect("events_view")
     return render(request,"event_add.html",{'u':u})
 
 
