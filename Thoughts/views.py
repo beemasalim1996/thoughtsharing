@@ -3,9 +3,9 @@ from . import models
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-
+from django.core.paginator import Paginator
 from django.contrib.auth import authenticate, login, logout
-
+import datetime
 
 # Create your views here.
 
@@ -18,12 +18,17 @@ def dashboard(request):
 def dashboard_view(request):
     u = models.CustUser.objects.get(id=request.user.id)
     print(u,"user")
-    return render(request, 'dashboard_view.html', {'u':u})
+    app_title=''
+    title=''
+    is_dashboard=True
+
+    return render(request, 'dashboard_view.html', {'u':u,'app_title':app_title,'title':title,'is_dashboard':is_dashboard})
 
 def profile(request):
     u = models.CustUser.objects.get(id=request.user.id)
     print(u,"user")
     return render(request, 'profile.html', {'u':u})
+
 
 
 
@@ -141,45 +146,76 @@ def signup(request):
     return render(request, "signup.html", {'error_msg': error_message})
 
 
-def thoughts_view(request):
-    u = models.CustUser.objects.get(id=request.user.id)
-    print(u, "user")
-    thoughts = models.Thoughts.objects.order_by('-id')
-    print(thoughts,"ttttttttttttttt")
-    if request.method == 'POST' and 'like_id' in request.POST:
-        like_id = request.POST['like_id']
-        print(like_id,"like_id")
-        user_details = models.Thoughts.objects.get(id=like_id)
-        if user_details.ThoughtImportant:
-            user_details.ThoughtImportant = False
-            user_details.save()
-        else:
-            user_details.ThoughtImportant = True
-            user_details.save()
+def events_view(request):
+    try:
+        data = models.Thoughts.objects.all().order_by('id')
 
-    return render(request, 'thoughts_view.html', {'thoughts':thoughts,'u':u})
+        paginator = Paginator(data, 10)
+        page = request.GET.get('page')
+        event_page = paginator.get_page(page)
+        count = len(data)
+        u = models.CustUser.objects.get(id=request.user.id)
+        print(u, "user")
+        events = models.Thoughts.objects.order_by('endDate')
+        print(events, "ttttttttttttttt")
 
-def thoughts_add(request):
+
+        if request.method == 'POST' and 'paid_id' in request.POST:
+            paid_id = request.POST['paid_id']
+            print(paid_id,"paid_id")
+            user_details = models.Thoughts.objects.get(id=paid_id)
+            if user_details.paid:
+                user_details.paid = False
+                user_details.save()
+            else:
+                user_details.paid = True
+                user_details.save()
+    except Exception as e:
+        print(e)
+
+
+    return render(request, 'event_view.html',{'key': event_page,'count':count})
+
+def events_add(request):
     error_message=None
     u = models.CustUser.objects.get(id=request.user.id)
     print(u, "user")
-    if request.method == 'POST' and "submit" in request.POST :
+    if request.method == 'POST' and 'submit' in request.POST:
+        title=request.POST.get("event_title")
+        print(title,"hhhhhhhhhhhhhh")
+        startdate = request.POST['event_start_date']
+        endDate = request.POST.get('event_end_date')
+        location = request.POST.get("event_location")
 
-        Thought=request.POST.get("Thought")
-        l=len(Thought)
+        category = request.POST.get("category")
+        description = request.POST.get("event_description")
+        published = request.POST.get("event_published")
+        paid = request.POST.get("event_paid")
+        image = request.FILES.get("image")
+        print(title,startdate,endDate,location, "title")
+        obj = models.Thoughts()
 
-        print(l,"lenght")
-        if len(Thought) > 255:
-            error_message = "Thought entered have more than 255 characters which is not allowed"
+        obj.titles = title
 
-        else:
-            error_message = None
+        obj.startdate = startdate
+
+        obj.endDate = endDate
+        obj.location = location
+        obj.description = description
+        obj.category = category
+        obj.published = published
+        obj.paid = paid
+        obj.image = image
+        obj.userId = models.CustUser.objects.get(id=request.user.id)
+        print(obj.userId,"uuuuuuuuuu")
+        obj.save()
+
         if error_message is None:
             try:
                 u=models.CustUser.objects.get(id=request.user.id)
-                obj = models.Thoughts()
-                Thought = request.POST.get("Thought")
-                obj.Thought=Thought
+                obj = models.Thought()
+                Thought = request.POST.get("event_title")
+                obj.titles=Thought
                 obj.userId = u
                 print(obj.userId,"userid")
 
@@ -187,8 +223,8 @@ def thoughts_add(request):
             except Exception as e:
                 print(e)
         else:
-            return render(request, 'thought_add.html', {'error_message': error_message})
-        return redirect("thoughts_view")
-    return render(request,"thought_add.html",{'u':u})
+            return render(request, 'event_add.html', {'error_message': error_message})
+        return redirect("event_view")
+    return render(request,"event_add.html",{'u':u})
 
 

@@ -10,6 +10,6 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name="dashboard"),
     path('dashboard_view/', views.dashboard_view, name="dashboard_view"),
     path('profile/', views.profile, name="profile"),
-    path('thoughts_view/', views.thoughts_view, name="thoughts_view"),
-    path('thoughts_add/', views.thoughts_add, name="thoughts_add"),
+    path('events_view/', views.events_view, name="events_view"),
+    path('events_add/', views.events_add, name="events_add"),
 ]

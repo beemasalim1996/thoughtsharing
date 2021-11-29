@@ -5,7 +5,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Share Thought | Dashboard</title>
+  <title>
+  {% if is_dashboard %} {{app_title}} | {{title}} {%  else%} {{title}}|{{app_title}}{% endif %}
+  </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -43,7 +45,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Share Thoughts</b></span>
+      <span class="logo-lg"><b>Share Events</b></span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -339,8 +341,8 @@
           </a>
         </li>
         <li class="active treeview menu-open">
-          <a href="{%url 'thoughts_view'%}">
-            <i class="fa fa-dashboard"></i> <span>Thoughts</span>
+          <a href="{%url 'events_add'%}">
+            <i class="fa fa-dashboard"></i> <span>Events</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -1356,7 +1358,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.18
     </div>
-    <strong>Copyright &copy; 2014-2019 <a href="{%url 'dashboard_view'%}">Thought Sharing Application</a>.</strong> All rights
+    <strong>Copyright &copy; 2014-2019 <a href="{%url 'dashboard_view'%}">Event Sharing Application</a>.</strong> All rights
     reserved.
   </footer>
 
